@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Shoot3.ogg-951b20e785d3042684db7032eb97c79d.oggstr"
+
+[deps]
+
+source_file="res://Asset/Audio/Sfx/Shoot3.ogg"
+dest_files=[ "res://.import/Shoot3.ogg-951b20e785d3042684db7032eb97c79d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

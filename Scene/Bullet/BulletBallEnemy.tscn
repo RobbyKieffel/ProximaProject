@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Script/Bullet/BulletBallEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Asset/Bullet/BallBullet.png" type="Texture" id=2]
+[ext_resource path="res://Scene/Bullet/BulletDefault.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 4.12311
+
+[node name="EnemyBallBullet" groups=["Bullet"] instance=ExtResource( 3 )]
+collision_mask = 1
+script = ExtResource( 1 )
+speed = 50
+max_travel = 500
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource( 2 )

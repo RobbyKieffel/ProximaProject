@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scene/Enemy/EnemyDefault.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Asset/Ship/EnemyShipBasic2.png" type="Texture" id=2]
+
+[node name="EnemyBasic2" groups=["BasicEnemy"] instance=ExtResource( 1 )]
+healt = 100
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
+rotation = -1.5708
+polygon = PoolVector2Array( 8, 1, 8, 6, 4, 4, 0, 6, -4, 4, -8, 6, -8, 1, 0, -6 )
+
+[node name="Particles2D" parent="." index="1"]
+position = Vector2( 5, 1.81198e-05 )
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource( 2 )

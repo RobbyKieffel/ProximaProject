@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/return-of-club.ogg-6d5ecae3c418db47ebe523319da4ac0b.oggstr"
+
+[deps]
+
+source_file="res://Asset/Audio/Bgm/return-of-club.ogg"
+dest_files=[ "res://.import/return-of-club.ogg-6d5ecae3c418db47ebe523319da4ac0b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

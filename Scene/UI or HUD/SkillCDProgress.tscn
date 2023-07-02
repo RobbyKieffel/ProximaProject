@@ -1,0 +1,180 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://Asset/Ship/PlayerShip1.png" type="Texture" id=1]
+[ext_resource path="res://Asset/HUD/CircleProgressBar.png" type="Texture" id=2]
+[ext_resource path="res://Asset/HUD/CircleProgressBarOutline.png" type="Texture" id=3]
+[ext_resource path="res://Asset/Material/EngnePowerParticlePlayer.material" type="Material" id=4]
+[ext_resource path="res://Asset/Ship/PlayerShip2.png" type="Texture" id=5]
+[ext_resource path="res://Script/HUD or UI/SkillCDProgress.gd" type="Script" id=6]
+
+[sub_resource type="Gradient" id=6]
+colors = PoolColorArray( 1, 0.492188, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0705521 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+flag_disable_z = true
+direction = Vector3( 0, 1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 4.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 45.0
+scale = 1.5
+scale_curve = SubResource( 5 )
+color = Color( 2, 2, 2, 1 )
+color_ramp = SubResource( 3 )
+
+[sub_resource type="Gradient" id=8]
+colors = PoolColorArray( 1, 1, 0, 0.784314, 1, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=9]
+gradient = SubResource( 8 )
+width = 16
+
+[sub_resource type="Curve" id=16]
+_data = [ Vector2( 0, 1 ), 0.0, -1.33244, 0, 0, Vector2( 0.838, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+curve = SubResource( 16 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 30.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 45.0
+scale = 15.0
+scale_curve = SubResource( 11 )
+color = Color( 2, 2, 2, 1 )
+color_ramp = SubResource( 9 )
+hue_variation = 0.04
+hue_variation_random = 1.0
+
+[sub_resource type="Gradient" id=13]
+colors = PoolColorArray( 1, 1, 0, 0.784314, 1, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=14]
+gradient = SubResource( 13 )
+width = 16
+
+[sub_resource type="Curve" id=17]
+_data = [ Vector2( 0, 1 ), 0.0, -1.33244, 0, 0, Vector2( 1, 0.47546 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=18]
+curve = SubResource( 17 )
+
+[sub_resource type="ParticlesMaterial" id=15]
+emission_shape = 1
+emission_sphere_radius = 15.0
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 45.0
+scale = 2.0
+scale_curve = SubResource( 18 )
+color = Color( 2, 2, 2, 1 )
+color_ramp = SubResource( 14 )
+
+[sub_resource type="CircleShape2D" id=19]
+radius = 16.0
+
+[node name="SkillCDProgress" type="TextureProgress" groups=["SkillCD"]]
+margin_right = 32.0
+margin_bottom = 32.0
+min_value = -30.0
+max_value = 0.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+fill_mode = 4
+tint_under = Color( 0, 0, 0, 0.588235 )
+tint_over = Color( 0, 0, 0, 1 )
+tint_progress = Color( 0.890196, 0.890196, 0.890196, 0.490196 )
+script = ExtResource( 6 )
+
+[node name="Container" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="PlayerDFR" type="TextureRect" parent="Container"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -18.8597
+margin_top = -19.9822
+margin_right = 11.1403
+margin_bottom = 10.0178
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Particles2D" type="Particles2D" parent="Container/PlayerDFR"]
+show_behind_parent = true
+position = Vector2( 15, 22 )
+fixed_fps = 10
+process_material = ExtResource( 4 )
+
+[node name="PlayerShield" type="TextureRect" parent="Container"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -18.8597
+margin_top = -19.9822
+margin_right = 11.1403
+margin_bottom = 10.0178
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Particles2D" type="Particles2D" parent="Container/PlayerShield"]
+show_behind_parent = true
+position = Vector2( 15, 23 )
+fixed_fps = 10
+process_material = ExtResource( 4 )
+
+[node name="Particles2D3" type="Particles2D" parent="Container/PlayerShield"]
+show_behind_parent = true
+position = Vector2( 5.1, 20 )
+fixed_fps = 10
+process_material = SubResource( 7 )
+
+[node name="Particles2D4" type="Particles2D" parent="Container/PlayerShield"]
+show_behind_parent = true
+position = Vector2( 24.8511, 20 )
+fixed_fps = 10
+process_material = SubResource( 7 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 16.3148, 17.1436 )
+z_index = -1
+emitting = false
+amount = 50
+process_material = SubResource( 12 )
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+position = Vector2( 16.3148, 17.1436 )
+process_material = SubResource( 15 )
+
+[node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 30.0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+shape = SubResource( 19 )
+
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]

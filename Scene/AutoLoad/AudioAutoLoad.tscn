@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Asset/Audio/Sfx/Shoot3.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Script/AutoLoad/AudioAutoLoad.gd" type="Script" id=2]
+
+[node name="AudioAutoLoad" type="Node"]
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -25.0
+pitch_scale = 1.1
+mix_target = 2

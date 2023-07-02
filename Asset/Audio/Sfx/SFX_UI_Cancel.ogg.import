@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SFX_UI_Cancel.ogg-3907fa751587a63c90538c7662f71e4e.oggstr"
+
+[deps]
+
+source_file="res://Asset/Audio/Sfx/SFX_UI_Cancel.ogg"
+dest_files=[ "res://.import/SFX_UI_Cancel.ogg-3907fa751587a63c90538c7662f71e4e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

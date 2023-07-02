@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=2]
+
+[sub_resource type="Gradient" id=32]
+colors = PoolColorArray( 1, 0.592157, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=37]
+gradient = SubResource( 32 )
+
+[sub_resource type="Curve" id=33]
+_data = [ Vector2( 0, 0.43865 ), 0.0, 0.0, 0, 0, Vector2( 0.294, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.328221 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=38]
+curve = SubResource( 33 )
+
+[sub_resource type="ParticlesMaterial" id=34]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+scale_curve = SubResource( 38 )
+color = Color( 2, 2, 2, 1 )
+color_ramp = SubResource( 37 )
+
+[sub_resource type="Gradient" id=35]
+colors = PoolColorArray( 1, 0, 0, 1, 1, 0.521484, 0, 1 )
+
+[sub_resource type="GradientTexture" id=39]
+gradient = SubResource( 35 )
+
+[sub_resource type="ParticlesMaterial" id=36]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 45.0
+scale = 3.0
+scale_curve = SubResource( 38 )
+color = Color( 2, 2, 2, 1 )
+color_ramp = SubResource( 39 )
+
+[node name="TrailTargetParticle" type="Node2D"]
+
+[node name="Particles2D2" type="Particles2D" parent="."]
+z_index = -1
+amount = 50
+local_coords = false
+process_material = SubResource( 34 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+z_index = -1
+amount = 300
+local_coords = false
+process_material = SubResource( 36 )
